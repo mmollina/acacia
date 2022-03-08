@@ -46,6 +46,8 @@ res<-cbind(rbind(masterdata.HD[,1:4],
 colnames(res) <- c(colnames(masterdata.HD)[1:4], snp.names)
 res <- as_tibble(res)
 masterdata.FULL <- bind_rows(res, masterdata.HD[,setdiff(colnames(masterdata.HD)[-c(1:4)], snp.names)])
+save(masterdata.FULL, file = "mastedata_FULL.rda")
+
 
 
 
